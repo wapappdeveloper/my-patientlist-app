@@ -1,0 +1,28 @@
+<div class="container">
+  <form class="form-signin">
+    <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Patient Details</h1>
+    <!--<input type="text" class="form-control" placeholder="First Name" required autofocus>
+  <input type="text" class="form-control" placeholder="Middle Name" autofocus>
+  <input type="text" class="form-control" placeholder="Last Name" required autofocus>
+  <input type="text" class="form-control" placeholder="Date of Birth" required autofocus>
+  <input type="text" class="form-control" placeholder="Age" required autofocus>
+  <input type="text" class="form-control" placeholder="SSN" required autofocus>
+  <br/>
+  <div>
+    <label>
+      Address
+    </label>
+  </div>
+  <input type="text" class="form-control" placeholder="Street" required autofocus>
+  <input type="text" class="form-control" placeholder="Locality" autofocus>
+  <input type="text" class="form-control" placeholder="City" required autofocus>
+  <input type="text" class="form-control" placeholder="State" required autofocus>
+  <input type="text" class="form-control" placeholder="Zip" required autofocus>
+  <input type="text" class="form-control" placeholder="Country" required autofocus>-->
+    <input type="text" *ngFor="let detail of patientDetail;let i=index" class="form-control" (keyup)="update($event,i)" placeholder="{{detail.lable}}"
+      [required]="detail.required" data-type="{{detail.validateType}}" autofocus>
+    <br/>
+    <div class="btn btn-lg btn-primary btn-block" (click)="submit()">Submit</div>
+  </form>
+</div>

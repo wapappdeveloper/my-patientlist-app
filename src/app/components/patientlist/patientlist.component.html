@@ -1,0 +1,23 @@
+<h1>Patient List</h1>
+<div class="container">
+  <table>
+    <tr>
+      <th>Patient Name</th>
+      <th>Age</th>
+      <th>Physician</th>
+      <th>SSN</th>
+      <th>Days</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let patient of allPatientDetail;let i = index">
+      <td>{{patient[0].value +' '+ patient[1].value +' '+ patient[2].value}}</td>
+      <td>{{patient[3].value}}</td>
+      <td>{{patient[11].value +' '+ patient[12].value}}</td>
+      <td>{{patient[4].value}}</td>
+      <td>{{patient[3].value}}</td>
+      <td>Edit</td>
+      <td>Delete</td>
+    </tr>
+  </table>
+</div>
