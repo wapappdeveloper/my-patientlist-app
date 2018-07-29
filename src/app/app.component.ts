@@ -18,7 +18,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.commonService.loadJSON(this.url, this.jsonLoaded.bind(this), this.jsonFailed.bind(this));
-    this.router.navigateByUrl('add');
+    this.router.navigateByUrl('patientlist');
   }
 
   jsonLoaded(res) {
