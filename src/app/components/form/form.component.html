@@ -1,28 +1,34 @@
+<h1>Patient Details</h1>
 <div class="container">
-  <form class="form-signin">
-    <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Patient Details</h1>
-    <!--<input type="text" class="form-control" placeholder="First Name" required autofocus>
-  <input type="text" class="form-control" placeholder="Middle Name" autofocus>
-  <input type="text" class="form-control" placeholder="Last Name" required autofocus>
-  <input type="text" class="form-control" placeholder="Date of Birth" required autofocus>
-  <input type="text" class="form-control" placeholder="Age" required autofocus>
-  <input type="text" class="form-control" placeholder="SSN" required autofocus>
-  <br/>
-  <div>
-    <label>
-      Address
-    </label>
+  <div class="profile-pic" id="profile-pic">
+    <img [src]="this.imageData" alt="" [class.clear]="this.imageData!==''">
   </div>
-  <input type="text" class="form-control" placeholder="Street" required autofocus>
-  <input type="text" class="form-control" placeholder="Locality" autofocus>
-  <input type="text" class="form-control" placeholder="City" required autofocus>
-  <input type="text" class="form-control" placeholder="State" required autofocus>
-  <input type="text" class="form-control" placeholder="Zip" required autofocus>
-  <input type="text" class="form-control" placeholder="Country" required autofocus>-->
-    <input type="text" *ngFor="let detail of patientDetail;let i=index" class="form-control" (keyup)="update($event,i)" placeholder="{{detail.lable}}"
-      [required]="detail.required" data-type="{{detail.validateType}}" autofocus>
+  <form class="form-signin" id="form">
+    <div *ngFor="let detail of patientDetail;let i=index">
+      <label for="{{i}}" class="">{{detail.lable}}</label>
+      <input type="text" id="{{i}}" class="form-control" [value]="setValue(detail.value, detail.validateType)" (keyup)="update($event, i, detail.validateType)" (blur)="update($event, i, detail.validateType)"
+        (change)="onFileUpload($event, i, detail.validateType)" name="detail.key" placeholder="{{'Enter '+detail.lable}}" [required]="detail.required" data-type="{{detail.validateType}}"
+        autofocus>
+      <div class="error" *ngIf="detail.error">{{detail.errorMessage}}</div>
+      <div class="gap"></div>
+    </div>
+
     <br/>
-    <div class="btn btn-lg btn-primary btn-block" (click)="submit()">Submit</div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="submit()">Submit</button>
   </form>
+  <!--<form class="form-signin">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+  </form>-->
 </div>

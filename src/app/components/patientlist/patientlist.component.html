@@ -10,14 +10,14 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let patient of allPatientDetail;let i = index">
-      <td>{{patient[0].value +' '+ patient[1].value +' '+ patient[2].value}}</td>
-      <td>{{patient[3].value}}</td>
-      <td>{{patient[11].value +' '+ patient[12].value}}</td>
-      <td>{{patient[4].value}}</td>
-      <td>{{patient[3].value}}</td>
-      <td>Edit</td>
-      <td>Delete</td>
+    <tr *ngFor="let patient of patientList;let i = index">
+      <td>{{patient.firstname +' '+ patient.middlename +' '+ patient.lastname}}</td>
+      <td>{{getAge(patient.dob).age}}</td>
+      <td>{{patient.phyfirstname +' '+ patient.phylastname}}</td>
+      <td>{{patient.ssn}}</td>
+      <td>{{getDaysInTreatment(patient.doadmit)}}</td>
+      <td class="icon-holder"><div class="icon edit-icon" (click)="edit(i)"></div></td>
+      <td class="icon-holder"><div class="icon delete-icon" (click)="delete(i)"></div></td>
     </tr>
   </table>
 </div>

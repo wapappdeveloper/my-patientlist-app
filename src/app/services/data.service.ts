@@ -4,22 +4,62 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  patientList: any = [
-    [
-      { key: 'firstname', value: 'Albert', lable: 'Patient First Name', required: true, validateType: 'string' },
-      { key: 'middlename', value: '', lable: 'Patient MiddleName Name', required: false, validateType: 'string' },
-      { key: 'lastname', value: 'Einstean', lable: 'Patient Last Name', required: true, validateType: 'string' },
-      { key: 'dob', value: '12/12/1980', lable: 'Date of Birth', required: true, validateType: 'date' },
-      { key: 'ssn', value: '123456', lable: 'Aathar', required: true, validateType: 'number' },
-      { key: 'street', value: '', lable: 'Street', required: true, validateType: 'string+number' },
-      { key: 'locality', value: '', lable: 'Locality', required: true, validateType: 'string' },
-      { key: 'city', value: '', lable: 'City', required: true, validateType: 'string' },
-      { key: 'state', value: '', lable: 'State', required: true, validateType: 'string' },
-      { key: 'zip', value: '', lable: 'Zip', required: true, validateType: 'number' },
-      { key: 'country', value: '', lable: 'Country', required: true, validateType: 'string' },
-      { key: 'refphylastname', value: 'Doctor', lable: 'Physician Last Name', required: true, validateType: 'string' },
-      { key: 'refphyfirstname', value: 'Bruce', lable: 'Physician First Name', required: true, validateType: 'string' }
-    ]
+  patientListHardData: any = [
+    {
+      "profilepic": "",
+      "firstname": "albert",
+      "middlename": "",
+      "lastname": "einstean",
+      "dob": "2010-01-02",
+      "doadmit":"2018-05-01",
+      "ssn": "123456",
+      "street": "2nd cross",
+      "locality": "mayo",
+      "city": "bangalore",
+      "state": "karnataka",
+      "zip": "560001",
+      "country": "india",
+      "phyfirstname": "doctor",
+      "phylastname": "bruce"
+    },
+    {
+      "profilepic": "",
+      "firstname": "simon",
+      "middlename": "",
+      "lastname": "mand",
+      "dob": "2010-01-02",
+      "doadmit":"2018-05-01",
+      "ssn": "135680",
+      "street": "1st cross",
+      "locality": "hsr",
+      "city": "bangalore",
+      "state": "karnataka",
+      "zip": "560001",
+      "country": "india",
+      "phyfirstname": "doctor",
+      "phylastname": "kelly"
+    },
+    {
+      "profilepic": "",
+      "firstname": "meen",
+      "middlename": "",
+      "lastname": "saar",
+      "dob": "2010-01-02",
+      "doadmit":"2018-05-01",
+      "ssn": "134789",
+      "street": "west road",
+      "locality": "indra",
+      "city": "bangalore",
+      "state": "karnataka",
+      "zip": "560001",
+      "country": "india",
+      "phyfirstname": "doctor",
+      "phylastname": "bora"
+    }
   ];
+  patientList:any = [];
+  editmode:boolean = false;
+  editIndex:number = null;
+  editPatientDetail:any = null;
   constructor() { }
 }

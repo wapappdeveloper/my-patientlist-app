@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-  <a class="navbar-brand">Top navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,10 +6,10 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active">Patient List</a>
+        <a class="nav-link" routerLink="/patientlist" routerLinkActive="active" (click)="clear()">Patient List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/add" routerLinkActive="active">Add Patient</a>
+        <a class="nav-link" routerLink="/add" routerLinkActive="active" (click)="clear()">Add Patient</a>
       </li>
     </ul>
   </div>

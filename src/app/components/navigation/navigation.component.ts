@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService:DataService) { }
 
   ngOnInit() {
+  }
+
+  clear(){
+    this.dataService.editIndex = null;
+    this.dataService.editmode = false;
+    this.dataService.editPatientDetail = null;
   }
 
 }

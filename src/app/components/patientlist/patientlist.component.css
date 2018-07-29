@@ -13,3 +13,25 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+.icon-holder{
+    width:20px;
+}
+
+.icon{
+    position: relative;
+    width:25px;
+    height:25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0 auto;
+    cursor: pointer;
+}
+
+.edit-icon{
+    background-image: url('/assets/images/pngs/edit.png');
+}
+
+.delete-icon{
+    background-image: url('/assets/images/pngs/delete.png');
+}

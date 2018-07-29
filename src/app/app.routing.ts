@@ -6,6 +6,6 @@ import { NgModule } from '@angular/core';
 
 
 export const routes: Routes = [
-    { path: '', component: PatientlistComponent, pathMatch: 'full' },
+    { path: 'patientlist', component: PatientlistComponent },
     { path: 'add', component: FormComponent }
 ];
