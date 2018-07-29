@@ -29,7 +29,7 @@ export class FileService {
     var observable = new Observable((observer) => {
       var reader = new FileReader();
       reader.readAsText(readFile, "UTF-8");
-      reader.onload = (event) => {
+      reader.onload = (event:any) => {
         observer.next(event.target.result);
       }
     });
@@ -43,7 +43,7 @@ export class FileService {
     var observable = new Observable((observer) => {
       var reader = new FileReader();
       reader.readAsDataURL(readFile);
-      reader.onload = (event) => {
+      reader.onload = (event:any) => {
         observer.next(event.target.result);
       }
     });
